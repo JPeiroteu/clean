@@ -49,7 +49,7 @@ class ProjectManager:
         return f"Project Manager\nProjects:\n{project_list}"
 
 if __name__ == "__main__":
-    m = ProjectManager()
+    project_manager = ProjectManager()
 
     while True:
         print("1. Add Project")
@@ -61,103 +61,103 @@ if __name__ == "__main__":
         print("7. View Projects and Tasks")
         print("0. Exit")
 
-        c = input("Enter your choice: ")
+        option = input("Enter your option: ")
 
-        if c == "1":
-            b = input("Enter Project Name: ")
-            p = Project(b)
-            m.add_project(p)
-            print(f"Project '{b}' added.\n")
+        if option == "1":
+            project_name = input("Enter Project Name: ")
+            project = Project(project_name)
+            project_manager.add_project(project)
+            print(f"Project '{project_name}' added.\n")
 
-        elif c == "2":
-            b = input("Enter Project Name: ")
-            p = m.get_project_by_name(b)
-            if p:
-                e = input("Enter Task Name: ")
-                f = input("Enter Task Due Date: ")
-                g = input("Enter Task Priority: ")
-                h = input("Enter Task Status (Completed/Pending): ")
-                t = Task(e, f, g)
-                if h.lower() == "completed":
-                    t.mark_as_completed()
-                p.add_t(t)
-                print(f"Task '{e}' added to Project '{b}'.\n")
+        elif option == "2":
+            project_name = input("Enter Project Name: ")
+            project = project_manager.get_project_by_name(project_name)
+            if project:
+                task_name = input("Enter Task Name: ")
+                due_date = input("Enter Task Due Date: ")
+                priority = input("Enter Task Priority: ")
+                status = input("Enter Task Status (Completed/Pending): ")
+                task = Task(task_name, due_date, priority)
+                if status.lower() == "completed":
+                    task.mark_as_completed()
+                project.add_task(task)
+                print(f"Task '{task_name}' added to Project '{project_name}'.\n")
             else:
-                print(f"Project '{b}' not found.\n")
+                print(f"Project '{project_name}' not found.\n")
 
-        elif c == "3":
-            b = input("Enter Project Name: ")
-            p = m.get_project_by_name(b)
-            if p:
-                e = input("Enter Task Name: ")
-                for t in p.c:
-                    if t.b == e:
+        elif option == "3":
+            project_name = input("Enter Project Name: ")
+            project = project_manager.get_project_by_name(project_name)
+            if project:
+                task_name = input("Enter Task Name: ")
+                for task in project.c:
+                    if task.b == task_name:
                         j = input("Enter New Task Name: ")
                         k = input("Enter New Task Due Date: ")
                         l = input("Enter New Task Priority: ")
                         n = input(
                             "Enter New Task Status (Completed/Pending): ")
-                        t.b = j
-                        t.c = k
-                        t.d = l
+                        task.b = j
+                        task.c = k
+                        task.d = l
                         if n.lower() == "completed":
-                            t.e = True
+                            task.e = True
                         else:
-                            t.e = False
-                        print(f"Task '{e}' edited.\n")
+                            task.e = False
+                        print(f"Task '{task_name}' edited.\n")
                         break
                 else:
-                    print(f"Task '{e}' not found in Project '{b}'.\n")
+                    print(f"Task '{task_name}' not found in Project '{project_name}'.\n")
             else:
-                print(f"Project '{b}' not found.\n")
+                print(f"Project '{project_name}' not found.\n")
 
-        elif c == "4":
-            b = input("Enter Project Name: ")
-            p = m.get_project_by_name(b)
-            if p:
-                e = input("Enter Task Name: ")
-                for t in p.c:
-                    if t.b == e:
-                        t.f()
-                        print(f"Task '{e}' marked as completed.\n")
+        elif option == "4":
+            project_name = input("Enter Project Name: ")
+            project = project_manager.get_project_by_name(project_name)
+            if project:
+                task_name = input("Enter Task Name: ")
+                for task in project.c:
+                    if task.b == task_name:
+                        task.f()
+                        print(f"Task '{task_name}' marked as completed.\n")
                         break
                 else:
-                    print(f"Task '{e}' not found in Project '{b}'.\n")
+                    print(f"Task '{task_name}' not found in Project '{project_name}'.\n")
             else:
-                print(f"Project '{b}' not found.\n")
+                print(f"Project '{project_name}' not found.\n")
 
-        elif c == "5":
-            b = input("Enter Project Name: ")
-            p = m.get_project_by_name(b)
-            if p:
-                e = input("Enter Task Name: ")
-                for t in p.c:
-                    if t.b == e:
-                        p.remove_t(t)
-                        print(f"Task '{e}' removed from Project '{b}'.\n")
+        elif option == "5":
+            project_name = input("Enter Project Name: ")
+            project = project_manager.get_project_by_name(project_name)
+            if project:
+                task_name = input("Enter Task Name: ")
+                for task in project.c:
+                    if task.b == task_name:
+                        project.remove_t(task)
+                        print(f"Task '{task_name}' removed from Project '{project_name}'.\n")
                         break
                 else:
-                    print(f"Task '{e}' not found in Project '{b}'.\n")
+                    print(f"Task '{task_name}' not found in Project '{project_name}'.\n")
             else:
-                print(f"Project '{b}' not found.\n")
+                print(f"Project '{project_name}' not found.\n")
 
-        elif c == "6":
-            b = input("Enter Project Name: ")
-            p = m.get_project_by_name(b)
-            if p:
-                m.remove_project(p)
-                print(f"Project '{b}' removed.\n")
+        elif option == "6":
+            project_name = input("Enter Project Name: ")
+            project = project_manager.get_project_by_name(project_name)
+            if project:
+                project_manager.remove_project(project)
+                print(f"Project '{project_name}' removed.\n")
             else:
-                print(f"Project '{b}' not found.\n")
+                print(f"Project '{project_name}' not found.\n")
 
-        elif c == "7":
-            for p in m.projects:
-                print(p)
-                for t in p.c:
-                    print(t)
+        elif option == "7":
+            for project in project_manager.projects:
+                print(project)
+                for task in project.c:
+                    print(task)
                 print()
 
-        elif c == "0":
+        elif option == "0":
             break
 
         else:
