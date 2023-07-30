@@ -1,30 +1,30 @@
-class Task:
-    def __init__(self, name, due_date, priority):
-        self.name = name
-        self.due_date = due_date
-        self.priority = priority
-        self.completed = False
+class T:
+    def __init__(a, b, c, d):
+        a.b = b
+        a.c = c
+        a.d = d
+        a.e = False
 
-    def mark_as_completed(self):
-        self.completed = True
-
-    def __str__(self):
-        status = "Completed" if self.completed else "Pending"
-        return f"Task: {self.name} ({status}) - Due Date: {self.due_date}, Priority: {self.priority}"
-
-class Project:
-    def __init__(self, name):
-        self.name = name
-        self.tasks = []
-
-    def add_task(self, task):
-        self.tasks.append(task)
-
-    def remove_t(self, task):
-        self.tasks.remove(task)
+    def f(a):
+        a.e = True
 
     def __str__(a):
-        return f"Project: {a.name}"
+        s = "Completed" if a.e else "Pending"
+        return f"Task: {a.b} ({s}) - Due Date: {a.c}, Priority: {a.d}"
+
+class P:
+    def __init__(a, b):
+        a.b = b
+        a.c = []
+
+    def add_t(a, t):
+        a.c.append(t)
+
+    def remove_t(a, t):
+        a.c.remove(t)
+
+    def __str__(a):
+        return f"Project: {a.b}"
 
 class M:
     def __init__(a):
@@ -38,7 +38,7 @@ class M:
 
     def gp(a, b):
         for p in a.b:
-            if p.name == b:
+            if p.b == b:
                 return p
         return None
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
         if c == "1":
             b = input("Enter Project Name: ")
-            p = Project(b)
+            p = P(b)
             m.a_p(p)
             print(f"Project '{b}' added.\n")
 
@@ -74,9 +74,9 @@ if __name__ == "__main__":
                 f = input("Enter Task Due Date: ")
                 g = input("Enter Task Priority: ")
                 h = input("Enter Task Status (Completed/Pending): ")
-                t = Task(e, f, g)
+                t = T(e, f, g)
                 if h.lower() == "completed":
-                    t.mark_as_completed()
+                    t.f()
                 p.add_t(t)
                 print(f"Task '{e}' added to Project '{b}'.\n")
             else:
