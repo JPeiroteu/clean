@@ -12,6 +12,7 @@ class Task:
         status = "Completed" if self.completed else "Pending"
         return f"Task: {self.name} ({status}) - Due Date: {self.due_date}, Priority: {self.priority}"
 
+
 class Project:
     def __init__(self, name):
         self.name = name
@@ -26,27 +27,29 @@ class Project:
     def __str__(a):
         return f"Project: {a.name}"
 
-class M:
-    def __init__(a):
-        a.b = []
 
-    def a_p(a, p):
-        a.b.append(p)
+class ProjectManager:
+    def __init__(self):
+        self.projects = []
 
-    def r_p(a, p):
-        a.b.remove(p)
+    def add_project(self, project):
+        self.projects.append(project)
 
-    def gp(a, b):
-        for p in a.b:
-            if p.name == b:
-                return p
+    def remove_project(self, project):
+        self.projects.remove(project)
+
+    def get_project_by_name(self, name):
+        for project in self.projects:
+            if project.name == name:
+                return project
         return None
 
-    def __str__(a):
-        return "Project Manager"
+    def __str__(self):
+        project_list = "\n".join(str(project) for project in self.projects)
+        return f"Project Manager\nProjects:\n{project_list}"
 
 if __name__ == "__main__":
-    m = M()
+    m = ProjectManager()
 
     while True:
         print("1. Add Project")
@@ -63,12 +66,12 @@ if __name__ == "__main__":
         if c == "1":
             b = input("Enter Project Name: ")
             p = Project(b)
-            m.a_p(p)
+            m.add_project(p)
             print(f"Project '{b}' added.\n")
 
         elif c == "2":
             b = input("Enter Project Name: ")
-            p = m.gp(b)
+            p = m.get_project_by_name(b)
             if p:
                 e = input("Enter Task Name: ")
                 f = input("Enter Task Due Date: ")
@@ -84,7 +87,7 @@ if __name__ == "__main__":
 
         elif c == "3":
             b = input("Enter Project Name: ")
-            p = m.gp(b)
+            p = m.get_project_by_name(b)
             if p:
                 e = input("Enter Task Name: ")
                 for t in p.c:
@@ -92,7 +95,8 @@ if __name__ == "__main__":
                         j = input("Enter New Task Name: ")
                         k = input("Enter New Task Due Date: ")
                         l = input("Enter New Task Priority: ")
-                        n = input("Enter New Task Status (Completed/Pending): ")
+                        n = input(
+                            "Enter New Task Status (Completed/Pending): ")
                         t.b = j
                         t.c = k
                         t.d = l
@@ -109,7 +113,7 @@ if __name__ == "__main__":
 
         elif c == "4":
             b = input("Enter Project Name: ")
-            p = m.gp(b)
+            p = m.get_project_by_name(b)
             if p:
                 e = input("Enter Task Name: ")
                 for t in p.c:
@@ -124,7 +128,7 @@ if __name__ == "__main__":
 
         elif c == "5":
             b = input("Enter Project Name: ")
-            p = m.gp(b)
+            p = m.get_project_by_name(b)
             if p:
                 e = input("Enter Task Name: ")
                 for t in p.c:
@@ -139,15 +143,15 @@ if __name__ == "__main__":
 
         elif c == "6":
             b = input("Enter Project Name: ")
-            p = m.gp(b)
+            p = m.get_project_by_name(b)
             if p:
-                m.r_p(p)
+                m.remove_project(p)
                 print(f"Project '{b}' removed.\n")
             else:
                 print(f"Project '{b}' not found.\n")
 
         elif c == "7":
-            for p in m.b:
+            for p in m.projects:
                 print(p)
                 for t in p.c:
                     print(t)
