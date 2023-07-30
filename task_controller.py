@@ -48,6 +48,7 @@ class ProjectManager:
         project_list = "\n".join(str(project) for project in self.projects)
         return f"Project Manager\nProjects:\n{project_list}"
 
+
 if __name__ == "__main__":
     project_manager = ProjectManager()
 
@@ -81,7 +82,8 @@ if __name__ == "__main__":
                 if status.lower() == "completed":
                     task.mark_as_completed()
                 project.add_task(task)
-                print(f"Task '{task_name}' added to Project '{project_name}'.\n")
+                print(
+                    f"Task '{task_name}' added to Project '{project_name}'.\n")
             else:
                 print(f"Project '{project_name}' not found.\n")
 
@@ -90,24 +92,23 @@ if __name__ == "__main__":
             project = project_manager.get_project_by_name(project_name)
             if project:
                 task_name = input("Enter Task Name: ")
-                for task in project.c:
-                    if task.b == task_name:
-                        j = input("Enter New Task Name: ")
-                        k = input("Enter New Task Due Date: ")
-                        l = input("Enter New Task Priority: ")
-                        n = input(
+                for task in project.tasks:
+                    if task.name == task_name:
+                        new_name = input("Enter New Task Name: ")
+                        due_date = input("Enter New Task Due Date: ")
+                        priority = input("Enter New Task Priority: ")
+                        status = input(
                             "Enter New Task Status (Completed/Pending): ")
-                        task.b = j
-                        task.c = k
-                        task.d = l
-                        if n.lower() == "completed":
-                            task.e = True
-                        else:
-                            task.e = False
+                        task.name = new_name
+                        task.due_date = due_date
+                        task.priority = priority
+                        task.completed = (
+                            status.lower() == "completed")
                         print(f"Task '{task_name}' edited.\n")
                         break
                 else:
-                    print(f"Task '{task_name}' not found in Project '{project_name}'.\n")
+                    print(
+                        f"Task '{task_name}' not found in Project '{project_name}'.\n")
             else:
                 print(f"Project '{project_name}' not found.\n")
 
@@ -122,7 +123,8 @@ if __name__ == "__main__":
                         print(f"Task '{task_name}' marked as completed.\n")
                         break
                 else:
-                    print(f"Task '{task_name}' not found in Project '{project_name}'.\n")
+                    print(
+                        f"Task '{task_name}' not found in Project '{project_name}'.\n")
             else:
                 print(f"Project '{project_name}' not found.\n")
 
@@ -134,10 +136,12 @@ if __name__ == "__main__":
                 for task in project.c:
                     if task.b == task_name:
                         project.remove_t(task)
-                        print(f"Task '{task_name}' removed from Project '{project_name}'.\n")
+                        print(
+                            f"Task '{task_name}' removed from Project '{project_name}'.\n")
                         break
                 else:
-                    print(f"Task '{task_name}' not found in Project '{project_name}'.\n")
+                    print(
+                        f"Task '{task_name}' not found in Project '{project_name}'.\n")
             else:
                 print(f"Project '{project_name}' not found.\n")
 
