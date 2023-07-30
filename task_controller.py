@@ -12,19 +12,19 @@ class T:
         s = "Completed" if a.e else "Pending"
         return f"Task: {a.b} ({s}) - Due Date: {a.c}, Priority: {a.d}"
 
-class P:
-    def __init__(a, b):
-        a.b = b
-        a.c = []
+class Project:
+    def __init__(self, name):
+        self.name = name
+        self.tasks = []
 
-    def add_t(a, t):
-        a.c.append(t)
+    def add_task(self, task):
+        self.tasks.append(task)
 
-    def remove_t(a, t):
-        a.c.remove(t)
+    def remove_t(self, task):
+        self.tasks.remove(task)
 
     def __str__(a):
-        return f"Project: {a.b}"
+        return f"Project: {a.name}"
 
 class M:
     def __init__(a):
@@ -38,7 +38,7 @@ class M:
 
     def gp(a, b):
         for p in a.b:
-            if p.b == b:
+            if p.name == b:
                 return p
         return None
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
         if c == "1":
             b = input("Enter Project Name: ")
-            p = P(b)
+            p = Project(b)
             m.a_p(p)
             print(f"Project '{b}' added.\n")
 
