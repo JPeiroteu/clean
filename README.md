@@ -24,9 +24,15 @@ During the refactoring process, I focused on identifying and addressing code sme
 
 ## Pylint Results
 
-<img width="971" alt="Screenshot 2023-07-30 at 14 16 59" src="https://github.com/JPeiroteu/clean/assets/79811891/9de05b1a-4ab9-41b9-ad5d-a4068b69d245"><br>
+Before refactoring the code in task_controller.py, the initial Pylint analysis resulted in a relatively low score, indicating potential issues and code smells. 
 
-<img width="802" alt="Screenshot 2023-07-31 at 11 27 28" src="https://github.com/JPeiroteu/clean/assets/79811891/1954a07b-b0cd-439c-9883-3b450547d23e"><br><br>
+<img width="822" alt="image" src="https://github.com/JPeiroteu/clean/assets/79811891/e8003f34-5b73-4074-82b4-237e3bd7710f"><br>
+
+After the refactoring, several corrections suggested by Pylint were applied, resulting in a higher score, and cleaner and better quality code.
+
+<img width="802" alt="Screenshot 2023-07-31 at 11 27 28" src="https://github.com/JPeiroteu/clean/assets/79811891/1954a07b-b0cd-439c-9883-3b450547d23e"><br>
+
+<img width="802" alt="image" src="https://github.com/JPeiroteu/clean/assets/79811891/0774f800-7e80-4259-b6c8-21ed37c9ab2b"><br><br>
 
 ## Running the Application
 
