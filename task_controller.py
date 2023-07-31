@@ -94,16 +94,17 @@ if __name__ == "__main__":
             project_name = input("Enter Project Name: ")
             project = project_manager.get_project_by_name(project_name)
             if project:
-                task_name = input("Enter Task Name: ")
-                due_date = input("Enter Task Due Date: ")
-                priority = input("Enter Task Priority: ")
-                status = input("Enter Task Status (Completed/Pending): ")
-                task = Task(task_name, due_date, priority)
-                if status.lower() == "completed":
-                    task.mark_as_completed()
-                project.add_task(task)
+                new_task_name = input("Enter New Task Name: ")
+                new_due_date = input("Enter New Task Due Date: ")
+                new_priority = input("Enter New Task Priority: ")
+                new_status = input(
+                    "Enter New Task Status (Completed/Pending): ")
+                new_task = Task(new_task_name, new_due_date, new_priority)
+                if new_status.lower() == "completed":
+                    new_task.mark_as_completed()
+                project.add_task(new_task)
                 print(
-                    f"Task '{task_name}' added to Project '{project_name}'.\n")
+                    f"Task '{new_task_name}' added to Project '{project_name}'.\n")
             else:
                 print(f"Project '{project_name}' not found.\n")
 
@@ -114,16 +115,16 @@ if __name__ == "__main__":
                 task_name = input("Enter Task Name: ")
                 for task in project.tasks:
                     if task.name == task_name:
-                        new_name = input("Enter New Task Name: ")
-                        due_date = input("Enter New Task Due Date: ")
-                        priority = input("Enter New Task Priority: ")
-                        status = input(
-                            "Enter New Task Status (Completed/Pending): ")
-                        task.name = new_name
-                        task.due_date = due_date
-                        task.priority = priority
+                        edit_task_name = input("Edit Task Name: ")
+                        edit_due_date = input("Edit Task Due Date: ")
+                        edit_priority = input("Edit Task Priority: ")
+                        edit_status = input(
+                            "Edit Task Status (Completed/Pending): ")
+                        task.name = edit_task_name
+                        task.due_date = edit_due_date
+                        task.priority = edit_priority
                         task.completed = (
-                            status.lower() == "completed")
+                            edit_status.lower() == "completed")
                         print(f"Task '{task_name}' edited.\n")
                         break
                 else:
