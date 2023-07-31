@@ -77,7 +77,6 @@ class ProjectManager:
         """
         Gets a project from the project manager by its name.
         """
-
         for project in self.projects:
             if project.name == name:
                 return project
@@ -132,17 +131,17 @@ if __name__ == "__main__":
             project = project_manager.get_project_by_name(project_name)
             if project:
                 task_name = input("Enter Task Name: ")
-                for task in project.tasks:
-                    if task.name == task_name:
+                for existing_task in project.tasks:
+                    if existing_task.name == task_name:
                         edit_task_name = input("Edit Task Name: ")
                         edit_due_date = input("Edit Task Due Date: ")
                         edit_priority = input("Edit Task Priority: ")
                         edit_status = input(
                             "Edit Task Status (Completed/Pending): ")
-                        task.name = edit_task_name
-                        task.due_date = edit_due_date
-                        task.priority = edit_priority
-                        task.completed = (
+                        existing_task.name = edit_task_name
+                        existing_task.due_date = edit_due_date
+                        existing_task.priority = edit_priority
+                        existing_task.completed = (
                             edit_status.lower() == "completed")
                         print(f"Task '{task_name}' edited.\n")
                         break
