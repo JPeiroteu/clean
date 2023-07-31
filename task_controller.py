@@ -10,7 +10,10 @@ class Task:
 
     def __str__(self):
         status = "Completed" if self.completed else "Pending"
-        return f"Task: {self.name} ({status}) - Due Date: {self.due_date}, Priority: {self.priority}"
+        return (
+            f"Task: {self.name} ({status}) - Due Date: {self.due_date}, "
+            f"Priority: {self.priority}"
+        )
 
 
 class Project:
