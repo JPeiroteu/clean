@@ -24,7 +24,9 @@ During the refactoring process, I focused on identifying and addressing code sme
 
 ## Pylint Results
 
-<img width="971" alt="Screenshot 2023-07-30 at 14 16 59" src="https://github.com/JPeiroteu/clean/assets/79811891/9de05b1a-4ab9-41b9-ad5d-a4068b69d245"><br><br>
+<img width="971" alt="Screenshot 2023-07-30 at 14 16 59" src="https://github.com/JPeiroteu/clean/assets/79811891/9de05b1a-4ab9-41b9-ad5d-a4068b69d245"><br>
+
+<img width="802" alt="Screenshot 2023-07-31 at 11 27 28" src="https://github.com/JPeiroteu/clean/assets/79811891/1954a07b-b0cd-439c-9883-3b450547d23e"><br><br>
 
 ## Running the Application
 
