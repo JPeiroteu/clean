@@ -15,6 +15,9 @@ class Task:
         self.completed = False
 
     def mark_as_completed(self):
+        """
+        Marks the task as completed by setting the 'completed' attribute to True.
+        """
         self.completed = True
 
     def __str__(self):
@@ -35,9 +38,15 @@ class Project:
         self.tasks = []
 
     def add_task(self, task):
+        """
+        Adds a task to the project.
+        """
         self.tasks.append(task)
 
     def remove_t(self, task):
+        """
+        Removes a task from the project.
+        """
         self.tasks.remove(task)
 
     def __str__(a):
@@ -53,12 +62,22 @@ class ProjectManager:
         self.projects = []
 
     def add_project(self, project):
+        """
+        Adds a project to the project manager.
+        """
         self.projects.append(project)
 
     def remove_project(self, project):
+        """
+        Removes a project from the project manager.
+        """
         self.projects.remove(project)
 
     def get_project_by_name(self, name):
+        """
+        Gets a project from the project manager by its name.
+        """
+
         for project in self.projects:
             if project.name == name:
                 return project
