@@ -43,7 +43,7 @@ class Project:
         """
         self.tasks.append(task)
 
-    def remove_t(self, task):
+    def remove_task(self, task):
         """
         Removes a task from the project.
         """
