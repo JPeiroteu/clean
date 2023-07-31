@@ -104,14 +104,14 @@ if __name__ == "__main__":
 
         if option == "1":
             project_name = input("Enter Project Name: ")
-            project = Project(project_name)
-            project_manager.add_project(project)
+            new_project = Project(project_name)
+            project_manager.add_project(new_project)
             print(f"Project '{project_name}' added.\n")
 
         elif option == "2":
             project_name = input("Enter Project Name: ")
-            project = project_manager.get_project_by_name(project_name)
-            if project:
+            selected_project = project_manager.get_project_by_name(project_name)
+            if selected_project:
                 new_task_name = input("Enter New Task Name: ")
                 new_due_date = input("Enter New Task Due Date: ")
                 new_priority = input("Enter New Task Priority: ")
@@ -120,7 +120,7 @@ if __name__ == "__main__":
                 new_task = Task(new_task_name, new_due_date, new_priority)
                 if new_status.lower() == "completed":
                     new_task.mark_as_completed()
-                project.add_task(new_task)
+                selected_project.add_task(new_task)
                 print(
                     f"Task '{new_task_name}' added to Project '{project_name}'.\n")
             else:
@@ -128,20 +128,20 @@ if __name__ == "__main__":
 
         elif option == "3":
             project_name = input("Enter Project Name: ")
-            project = project_manager.get_project_by_name(project_name)
-            if project:
+            selected_project = project_manager.get_project_by_name(project_name)
+            if selected_project:
                 task_name = input("Enter Task Name: ")
-                for existing_task in project.tasks:
-                    if existing_task.name == task_name:
+                for selected_task in selected_project.tasks:
+                    if selected_task.name == task_name:
                         edit_task_name = input("Edit Task Name: ")
                         edit_due_date = input("Edit Task Due Date: ")
                         edit_priority = input("Edit Task Priority: ")
                         edit_status = input(
                             "Edit Task Status (Completed/Pending): ")
-                        existing_task.name = edit_task_name
-                        existing_task.due_date = edit_due_date
-                        existing_task.priority = edit_priority
-                        existing_task.completed = (
+                        selected_task.name = edit_task_name
+                        selected_task.due_date = edit_due_date
+                        selected_task.priority = edit_priority
+                        selected_task.completed = (
                             edit_status.lower() == "completed")
                         print(f"Task '{task_name}' edited.\n")
                         break
@@ -153,12 +153,12 @@ if __name__ == "__main__":
 
         elif option == "4":
             project_name = input("Enter Project Name: ")
-            project = project_manager.get_project_by_name(project_name)
-            if project:
+            selected_project = project_manager.get_project_by_name(project_name)
+            if selected_project:
                 task_name = input("Enter Task Name: ")
-                for task in project.tasks:
-                    if task.name == task_name:
-                        task.mark_as_completed()
+                for selected_task in selected_project.tasks:
+                    if selected_task.name == task_name:
+                        selected_task.mark_as_completed()
                         print(f"Task '{task_name}' marked as completed.\n")
                         break
                 else:
@@ -169,12 +169,12 @@ if __name__ == "__main__":
 
         elif option == "5":
             project_name = input("Enter Project Name: ")
-            project = project_manager.get_project_by_name(project_name)
-            if project:
+            selected_project = project_manager.get_project_by_name(project_name)
+            if selected_project:
                 task_name = input("Enter Task Name: ")
-                for task in project.tasks:
-                    if task.name == task_name:
-                        project.remove_task(task)
+                for selected_task in selected_project.tasks:
+                    if selected_task.name == task_name:
+                        selected_project.remove_task(selected_task)
                         print(
                             f"Task '{task_name}' removed from Project '{project_name}'.\n")
                         break
@@ -186,18 +186,18 @@ if __name__ == "__main__":
 
         elif option == "6":
             project_name = input("Enter Project Name: ")
-            project = project_manager.get_project_by_name(project_name)
-            if project:
-                project_manager.remove_project(project)
+            selected_project = project_manager.get_project_by_name(project_name)
+            if selected_project:
+                project_manager.remove_project(selected_project)
                 print(f"Project '{project_name}' removed.\n")
             else:
                 print(f"Project '{project_name}' not found.\n")
 
         elif option == "7":
-            for project in project_manager.projects:
-                print(project)
-                for task in project.tasks:
-                    print(task)
+            for selected_project in project_manager.projects:
+                print(selected_project)
+                for selected_task in selected_project.tasks:
+                    print(selected_task)
                 print()
 
         elif option == "0":
