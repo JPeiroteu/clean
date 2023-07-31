@@ -28,7 +28,7 @@ Before refactoring the code in task_controller.py, the initial Pylint analysis r
 
 <img width="802" alt="image1" src="https://github.com/JPeiroteu/clean/assets/79811891/65fcb52c-2198-4def-956b-da26aa0563cf"><br>
 
-<img width="971" alt="image3" src="https://github.com/JPeiroteu/clean/assets/79811891/c3a3680b-b694-4439-8c7c-2b19193a2cd2"><br>
+<img width="829" alt="Screenshot 2023-07-31 at 14 24 30" src="https://github.com/JPeiroteu/clean/assets/79811891/85d17cd2-fd2a-4326-9bbb-54d224ef83a3"><br>
 
 After the refactoring, several corrections suggested by Pylint were applied, resulting in a higher score, and cleaner and better quality code.
 
