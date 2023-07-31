@@ -49,8 +49,8 @@ class Project:
         """
         self.tasks.remove(task)
 
-    def __str__(a):
-        return f"Project: {a.name}"
+    def __str__(self):
+        return f"Project: {self.name}"
 
 
 class ProjectManager:
