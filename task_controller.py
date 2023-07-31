@@ -117,9 +117,9 @@ if __name__ == "__main__":
             project = project_manager.get_project_by_name(project_name)
             if project:
                 task_name = input("Enter Task Name: ")
-                for task in project.c:
-                    if task.b == task_name:
-                        task.f()
+                for task in project.tasks:
+                    if task.name == task_name:
+                        task.mark_as_completed()
                         print(f"Task '{task_name}' marked as completed.\n")
                         break
                 else:
