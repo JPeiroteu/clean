@@ -1,4 +1,13 @@
+"""
+This module defines classes for managing tasks and projects.
+"""
+
+
 class Task:
+    """
+    Represents a Task with attributes for name, due date, priority, and completion status.
+    """
+
     def __init__(self, name, due_date, priority):
         self.name = name
         self.due_date = due_date
@@ -17,6 +26,10 @@ class Task:
 
 
 class Project:
+    """
+    Represents a Project with attributes for name and a list of tasks.
+    """
+
     def __init__(self, name):
         self.name = name
         self.tasks = []
@@ -32,6 +45,10 @@ class Project:
 
 
 class ProjectManager:
+    """
+    Represents a Project Manager that manages a list of projects.
+    """
+
     def __init__(self):
         self.projects = []
 

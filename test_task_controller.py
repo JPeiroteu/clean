@@ -1,3 +1,7 @@
+"""
+Unit tests for the task_controller module
+"""
+
 import unittest
 from task_controller import Task, Project, ProjectManager
 
