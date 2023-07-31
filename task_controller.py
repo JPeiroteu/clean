@@ -133,9 +133,9 @@ if __name__ == "__main__":
             project = project_manager.get_project_by_name(project_name)
             if project:
                 task_name = input("Enter Task Name: ")
-                for task in project.c:
-                    if task.b == task_name:
-                        project.remove_t(task)
+                for task in project.tasks:
+                    if task.name == task_name:
+                        project.remove_task(task)
                         print(
                             f"Task '{task_name}' removed from Project '{project_name}'.\n")
                         break
@@ -157,7 +157,7 @@ if __name__ == "__main__":
         elif option == "7":
             for project in project_manager.projects:
                 print(project)
-                for task in project.c:
+                for task in project.tasks:
                     print(task)
                 print()
 
